@@ -103,7 +103,6 @@ nexacore.local
 - [AD Build Runbook](docs/AD-Build-Runbook.md)
 - [GPO Configuration Guide](docs/GPO-Configuration.md)
 - [User Account Matrix](docs/User-Account-Matrix.md)
-- [Troubleshooting Log](docs/Troubleshooting-Log.md)
 
 ---
 
@@ -115,4 +114,3 @@ See the `/screenshots` folder for:
 - GPO links per department
 - Successful domain join confirmation
 - Domain user login on CLIENT-01
-- gpresult output confirming GPO application

@@ -35,18 +35,23 @@ IT infrastructure for a managed services company.
 
 ## Azure Infrastructure
 
-![Azure Resource Group](screenshots/azure-resource-group.png)
-
 The lab runs on two Azure VMs inside a dedicated VNet.
 DC-01 holds a static private IP at 10.0.1.10 and acts as
 the DNS server for the entire subnet. CLIENT-01's NIC DNS
 is pointed directly at DC-01 to enable domain resolution
 and joining.
 
-![VM Configuration](screenshots/VM1)
-![VM Configuration](screenshots/clientVM)
-![VM Configuration](screenshots/DC static)
-![VM Configuration](screenshots/DNS)
+![DC-01 Azure VM — Windows Server 2022 Datacenter](screenshots/VM1.png)
+![Client VM (client1) — Windows 11 Pro](screenshots/clientVM.png)
+![DC-01 NIC Static Private IP Configuration — 10.0.1.10](screenshots/DC%20static.png)
+![Client VM TCP/IPv4 — DNS Server Pointed at DC-01 (10.0.1.10)](screenshots/DNS.png)
+
+### Domain Controller — Server Manager
+
+After provisioning, DC-01 was configured with Active Directory Domain Services,
+DNS Server, and File and Storage Services roles via Server Manager.
+
+![DC-01 Server Manager Dashboard — AD DS, DNS, and File & Storage Services installed](screenshots/azure-resource-group.png)
 
 ---
 
@@ -65,7 +70,7 @@ nexacore.local
     └── Servers
 ```
 
-![ADUC OU Structure](screenshots/Screenshot 4)
+![NexaCore OU Structure in Active Directory Users and Computers](screenshots/Screenshot%204.png)
 
 ---
 
@@ -114,7 +119,7 @@ nexacore.local
 | Karen Lewis | klewis | Legal Counsel |
 | Oscar Clark | oclark | Paralegal |
 
-![ADUC Users](screenshots/Screenshot 5)
+![IT Department Users in ADUC — Alex Torres, Brian Nguyen, Carlos Patel, Diana Kim](screenshots/Screenshot%205.png)
 
 ---
 
@@ -150,8 +155,8 @@ nexacore.local
 
 ## Group Policy Configuration
 
-![GPO Links](screenshots/Screenshot 6)
-![GPO Links](screenshots/Screenshot 7)
+![Group Policy Objects Linked in nexacore.local — Base Security, Finance, HR, IT, Legal, Sales Policies](screenshots/Screenshot%206.png)
+![NexaCore - HR Policy Settings — Control Panel Prohibited and Removable Storage Denied](screenshots/Screenshot%207.png)
 
 ### NexaCore - Base Security Policy
 **Linked to:** Domain root (applies to all users and computers)
@@ -242,9 +247,9 @@ supports regulatory compliance and legal hold requirements.*
 CLIENT-01 was successfully joined to nexacore.local
 and moved to the IT → Computers OU.
 
-![Domain Join Success](screenshots/Screenshot 9)
+![JEFFPC Computer Object in IT > Computers OU After Domain Join](screenshots/Screenshot%209.png)
 
-![Domain User Login](screenshots/Screenshot 8)
+![Domain User Login — Carlos Patel (cpatel) Signed into JEFFPC on nexacore.local](screenshots/Screenshot%208.png)
 
 ---
 
